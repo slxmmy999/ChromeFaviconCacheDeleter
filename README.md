@@ -1,5 +1,5 @@
 # ChromeFaviconCacheDeleter
- A tool favicon cache on Chrome to prevent tracking through the use of favicons.
+ A tool to delete favicon cache on Chrome to prevent tracking through the use of favicons.
 
  Run script or executable file to remove favicon caches, doing so frequently will help decrease your risk of being tracked by websites using favicons.
 
