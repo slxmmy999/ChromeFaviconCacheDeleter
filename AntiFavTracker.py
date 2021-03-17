@@ -9,27 +9,27 @@ try:
         os.system("TASKKILL /f  /IM  CHROME.EXE")
         time.sleep(1)
 except IndexError:
-    print("No aruments!")
+    pass
 
 if os.path.exists(fpath):
     try:
         os.remove(fpath)
-        print("File deleted")
+        print("\"Favicons\" file has been deleted")
     except PermissionError:
-        print("Unable to clear Favicon cache because Chrome is open, close Chrome and try again!")
+        print("Unable to delete the file \"Favicon\" because Chrome is open, close Chrome and try again!")
 else:
-    print("File does not exist")
+    print(f"\"{fpath}\" file does not exist")
 
-fjpath = os.path.join(os.environ['HOMEPATH'], 'AppData', 'Local', 'Google', 'Chrome', 'User Data', 'Default', 'Favicons-Journal')
+fjpath = os.path.join(os.environ['HOMEPATH'], 'AppData', 'Local', 'Google', 'Chrome', 'User Data', 'Default', 'Favicons-journal')
 
-if os.path.exists(fpath):
-    try:
-        os.remove(fjpath)
-        print("File deleted")
-    except PermissionError:
-        print("Unable to clear Favicon-Journal because Chrome is open, close Chrome and try again!")
-else:
-    print("File does not exist")
+try:
+    os.remove(fjpath)
+    print("\"Favicons-journal\" file has been deleted")
+except PermissionError:
+    print("Unable to delete the file \"Favicon-journal\" because Chrome is open, close Chrome and try again!")
+except FileNotFoundError:
+    print(f"\"{fjpath}\" file does not exist")
+
 
 sys.stdout.write("Exiting in 3")
 sys.stdout.flush()
