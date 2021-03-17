@@ -6,3 +6,5 @@
 Usage:
 - Run the file while Chrome is closed
 - Use -force argument when running to force close Chrome before deleting cahces
+
+NOTE: Since the binary is compiled using pyinstaller, it may be falsely detected by some antivirus software. If you are uncomfortable using the .exe file use the Python script.
